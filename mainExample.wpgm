@@ -1,14 +1,27 @@
 import wollok.game.*
 
-import example.pepita
+import esneic.*
 
-program PepitaGame {
+program EsneicGame {
 	game.title("Esneic")
-	game.height(50)
-	game.width(50)
+	game.cellSize(64)
+	game.height(20)
+	game.width(20)
+	game.addVisual(cabeza)
+	game.addVisual(cuerpo)
+	game.addVisual(cola)
+	game.addVisual(manzana)
+	
+	keyboard.up().onPressDo({ cabeza.cambiarDireccion("arriba") })
+	keyboard.down().onPressDo({ cabeza.cambiarDireccion("abajo") })
+	keyboard.right().onPressDo({ cabeza.cambiarDireccion("derecha") })
+	keyboard.left().onPressDo({ cabeza.cambiarDireccion("izquierda") })
 
-	// add assets in asset folder, for example, for the background
-  // game.boardGround("fondo2.jpg")
+	game.onTick(200, "mover",{cabeza.mover()})
+	game.onTick(200, "seguir",{cuerpo.seguirLaCabeza()})
+	
+	//add assets in asset folder, for example, for the background
+  	// game.boardGround("fondo2.jpg")
 
 	//
 
