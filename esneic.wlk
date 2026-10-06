@@ -1,10 +1,21 @@
 object esneic{
+<<<<<<< HEAD
+=======
+  //La idea es representar a la serpiente como una lista
+  //Ya que le vamos ir agregando segmentos (partes del cuerpo)
+  //Así también es más fácil mover y rotar cada segmento
+  //en función del segmento que tenda adelante
+>>>>>>> 5da5736 (Commit para solucionar problema de ramas divergentes)
   var segmentos = [cabeza, cuerpo, cola]
 
   method agregarSegmento(segmento){
     segmentos.add(segmento)
   }
 
+<<<<<<< HEAD
+=======
+  //Para no crear una fruta en una posición en donde ya está la serpiente
+>>>>>>> 5da5736 (Commit para solucionar problema de ramas divergentes)
   method posicionOcupada(posicion){
     segmentos.any({ segmento => segmento.posicion() == posicion})
   }
@@ -25,6 +36,11 @@ object cabeza{
     direccion = nuevaDireccion
   }
 
+<<<<<<< HEAD
+=======
+  method posicion() = position 
+  
+>>>>>>> 5da5736 (Commit para solucionar problema de ramas divergentes)
   method mover(){
     if(direccion == "arriba") 
       position = position.up(1)
@@ -47,7 +63,10 @@ object cabeza{
     return "esneic/assets/cabeza-der.png"
   }
 
+<<<<<<< HEAD
   method posicion() = position 
+=======
+>>>>>>> 5da5736 (Commit para solucionar problema de ramas divergentes)
 }
 
 object cuerpo{
