@@ -17,8 +17,10 @@ program EsneicGame {
 	keyboard.right().onPressDo({ cabeza.cambiarDireccion("derecha") })
 	keyboard.left().onPressDo({ cabeza.cambiarDireccion("izquierda") })
 
-	game.onTick(200, "mover",{cabeza.mover()})
-	game.onTick(200, "seguir",{cuerpo.seguirLaCabeza()})
+	//La cabeza se mueve apenas empeiza el juego. Habría que poner un cartel que diga:
+	// "presiona cualquier tecla para empezar a jugar"
+	game.onTick(200, "mover",{cabeza.mover()}) 
+	game.onTick(200, "seguir",{cuerpo.seguirLaCabeza()}) //Creo que esto puede juntarse con cabeza.mover()
 	
 	//add assets in asset folder, for example, for the background
   	// game.boardGround("fondo2.jpg")
